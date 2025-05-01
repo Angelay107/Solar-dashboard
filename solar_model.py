@@ -6,7 +6,7 @@ Created on Wed Apr 30 20:00:03 2025
 """
 import numpy as np
 
-def solar_cash_flows(system_size_kw, state_price_per_kwh):
+def solar_cash_flows(system_size_kw, electricity_price):
     install_cost = 2.50 * 1000 * system_size_kw
     itc = 0.30 * install_cost
     annual_gen_kwh = 1400 * system_size_kw
@@ -14,7 +14,7 @@ def solar_cash_flows(system_size_kw, state_price_per_kwh):
 
     cash_flows = []
     cumulative_savings = 0
-    electricity_price = state_price_per_kwh
+
 
     for year in range(26):  # Include Year 0
         if year == 0:
