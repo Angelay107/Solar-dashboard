@@ -2,10 +2,6 @@
 
 This is a simple Streamlit app that gives a 25 yr cash flow, IRR, and payback period for solar projects based on the US state and size of the rooftop system.
 
-##Overview
-
-By providing the following inputs, 
-
 ## Assumptions
 
 - Installed cost: **$2.50/W**
@@ -16,11 +12,16 @@ By providing the following inputs,
 - ITC: **30%**, applied in Year 0
 - All-equity financing
 
-## How to Run
-
-### 1. Clone the repository
+## Quick start
 
 ```bash
+# Clone the repo
 git clone https://github.com/YOUR_USERNAME/solar-dashboard.git
 cd solar-dashboard
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+streamlit run app.py
 
