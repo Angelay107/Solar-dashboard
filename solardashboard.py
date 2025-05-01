@@ -70,11 +70,20 @@ state = st.selectbox("Select your state", list(state_prices.keys()))
 roof_size = st.number_input("Enter system size (kW)", min_value=1.0, step=0.1)
 
 if st.button("Calculate"):
-    cash_flows, irr, payback, cost, gen = solar_cash_flows(roof_size, state_prices[state])
-    st.write(f"**System Cost:** ${cost:,.2f}")
-    st.write(f"**Annual Generation:** {gen:,.0f} kWh")
-    st.write(f"**IRR:** {irr:.2%}")
-    st.write(f"**Payback Period:** Year {payback}")
+    if state and roof_size > 0:
+        try:
+            electricity_price = state_prices.get(state)
+            cash_flows, irr, payback, cost, gen = solar_cash_flows(roof_size, electricity_price)
 
-    df = pd.DataFrame({"Year": list(range(26)), "Cash Flow": cash_flows})
-    st.dataframe(df)
+            st.write(f"**System Cost:** ${cost:,.2f}")
+            st.write(f"**Annual Generation:** {gen:,.0f} kWh")
+            st.write(f"**IRR:** {irr:.2%}")
+            st.write(f"**Payback Period:** Year {payback}")
+
+            df = pd.DataFrame({"Year": list(range(26)), "Cash Flow ($)": cash_flows})
+            st.dataframe(df)
+
+        except Exception as e:
+            st.error(f"An error occurred while calculating: {e}")
+    else:
+        st.warning("Please select a state and enter a valid system size.")
