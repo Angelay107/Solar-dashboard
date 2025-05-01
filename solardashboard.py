@@ -7,6 +7,7 @@ Created on Wed Apr 30 20:15:09 2025
 
 import streamlit as st
 import pandas as pd
+from solar_model import solar_cash_flows
 
 # Prices pulled from https://www.electricchoice.com/electricity-prices-by-state/
 state_prices = state_prices = {
