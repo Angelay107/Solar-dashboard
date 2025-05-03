@@ -4,7 +4,7 @@ Created on Wed Apr 30 20:00:03 2025
 
 @author: alpha
 """
-import numpy-financial as npf
+import numpy_financial as npf
 
 def solar_cash_flows(system_size_kw, electricity_price):
     install_cost = 2.50 * 1000 * system_size_kw
