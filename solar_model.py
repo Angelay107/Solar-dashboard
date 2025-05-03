@@ -27,7 +27,7 @@ def solar_cash_flows(system_size_kw, electricity_price):
         cash_flows.append(cash)
 
     irr = npf.irr(cash_flows)
-    cum_cash = npf.cumsum(cash_flows)
+    cum_cash = np.cumsum(cash_flows)
     payback_year = next((i for i, x in enumerate(cum_cash) if x > 0), None)
     
     return cash_flows, irr, payback_year, install_cost, annual_gen_kwh
