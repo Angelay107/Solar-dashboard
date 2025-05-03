@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 """
 Created on Wed Apr 30 20:00:03 2025
 
@@ -17,7 +17,7 @@ def solar_cash_flows(system_size_kw, electricity_price):
     cumulative_savings = 0
 
 
-    for year in range(26):  # Include Year 0
+    for year in range(26):  # 25 year cash flow including year 0
         if year == 0:
             cash = -install_cost + itc
         else:
