@@ -1,6 +1,7 @@
 # Solar Project Dashboard
 
 This is a simple Streamlit app that gives a 25 yr cash flow, IRR, and payback period for solar projects based on the US state and size of the rooftop system.
+https://solar-dashboard-debctudvdpp2rshakjhony.streamlit.app/
 
 ## Assumptions
 
